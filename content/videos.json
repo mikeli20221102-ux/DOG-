@@ -1,0 +1,22 @@
+{
+  "items": [
+    {
+      "name": "Chinese Crested",
+      "weeks": 9,
+      "poster": "assets/img/crested-cover.jpg",
+      "src": "assets/video/crested.mp4"
+    },
+    {
+      "name": "Chow Chow",
+      "weeks": 10,
+      "poster": "assets/img/chow-cover.jpg",
+      "src": "assets/video/chow.mp4"
+    },
+    {
+      "name": "Shar-Pei",
+      "weeks": 8,
+      "poster": "assets/img/sharpei-cover.jpg",
+      "src": "assets/video/sharpei.mp4"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "email": "Mikeli20221102@gmail.com",
+  "formEndpoint": "https://formspree.io/f/xbdeaabj",
+  "whatsapp": "639053191026",
+  "facebook": "https://www.facebook.com/profile.php?id=100094280424574",
+  "stats": {
+    "families": "1,200+",
+    "countries": "15+",
+    "years": "12",
+    "satisfaction": "4.9/5"
+  },
+  "aboutImage": "assets/img/about-base.jpg",
+  "heroImage": "assets/img/hero.jpg",
+  "deliveryImage": "assets/img/delivery.jpg"
+}

@@ -1,0 +1,117 @@
+# Decap CMS — Pawsport 后台
+# 首次部署后：把 site_url / display_url 改成你的 Netlify 域名
+# Netlify 需开启：Identity + Git Gateway（见 CMS-SETUP.md）
+
+backend:
+  name: git-gateway
+  branch: main
+
+# 本地调试后台时可取消注释，并运行：npx decap-server
+# local_backend: true
+
+media_folder: assets/img
+public_folder: /assets/img
+
+site_url: https://your-site.netlify.app
+display_url: https://your-site.netlify.app
+logo_url: /assets/img/crested-1.jpg
+
+locale: zh_Hans
+
+collections:
+  - name: settings
+    label: 站点设置
+    files:
+      - name: site_settings
+        label: 联系方式 & 数据
+        file: content/settings.json
+        fields:
+          - { label: 接单邮箱, name: email, widget: string }
+          - { label: Formspree 地址, name: formEndpoint, widget: string, required: false }
+          - { label: WhatsApp（国际格式纯数字）, name: whatsapp, widget: string, required: false }
+          - { label: Facebook 链接, name: facebook, widget: string, required: false }
+          - label: 数据条（信任背书）
+            name: stats
+            widget: object
+            fields:
+              - { label: 已服务家庭, name: families, widget: string, default: "1,200+" }
+              - { label: 覆盖国家, name: countries, widget: string, default: "15+" }
+              - { label: 经验年数, name: years, widget: string, default: "12" }
+              - { label: 好评率, name: satisfaction, widget: string, default: "4.9/5" }
+          - { label: 关于我们配图, name: aboutImage, widget: image, required: false }
+          - { label: 首页大图, name: heroImage, widget: image, required: false }
+          - { label: 交付板块配图, name: deliveryImage, widget: image, required: false }
+
+  - name: breeds
+    label: 犬种管理
+    files:
+      - name: breeds_list
+        label: 所有犬种
+        file: content/breeds.json
+        fields:
+          - label: 犬种列表
+            name: items
+            widget: list
+            summary: "{{fields.name}} · ${{fields.priceFrom}} · {{fields.published}}"
+            fields:
+              - { label: ID（英文小写，新增品种时填写，勿改已有）, name: key, widget: string, pattern: ['^[a-z0-9-]+$', '仅小写字母、数字、连字符'] }
+              - { label: 上架显示, name: published, widget: boolean, default: true }
+              - { label: 英文名, name: name, widget: string }
+              - { label: 中文名, name: zh, widget: string }
+              - { label: 起价 USD（网站自动显示到 3 倍）, name: priceFrom, widget: number, value_type: int, min: 0 }
+              - { label: 封面图（卡片缩略图）, name: coverImage, widget: image }
+              - label: 详情相册（可多图）
+                name: gallery
+                widget: list
+                summary: "{{fields.image}}"
+                field: { label: 图片, name: image, widget: image }
+              - { label: 标签（英文）, name: tag_en, widget: string }
+              - { label: 标签（中文）, name: tag_zh, widget: string }
+              - { label: 短介绍（英文）, name: desc_en, widget: text }
+              - { label: 短介绍（中文）, name: desc_zh, widget: text }
+              - { label: 详细介绍（英文）, name: long_en, widget: text }
+              - { label: 详细介绍（中文）, name: long_zh, widget: text }
+              - { label: 体型（英文）, name: size_en, widget: string }
+              - { label: 体型（中文）, name: size_zh, widget: string }
+              - { label: 性格（英文）, name: temperament_en, widget: string }
+              - { label: 性格（中文）, name: temperament_zh, widget: string }
+              - { label: 被毛（英文）, name: coat_en, widget: string }
+              - { label: 被毛（中文）, name: coat_zh, widget: string }
+              - { label: 寿命（英文）, name: lifespan_en, widget: string }
+              - { label: 寿命（中文）, name: lifespan_zh, widget: string }
+              - { label: 适合（英文）, name: goodwith_en, widget: string }
+              - { label: 适合（中文）, name: goodwith_zh, widget: string }
+
+  - name: videos
+    label: 视频
+    files:
+      - name: videos_list
+        label: 视频列表
+        file: content/videos.json
+        fields:
+          - label: 视频
+            name: items
+            widget: list
+            summary: "{{fields.name}} · {{fields.weeks}} weeks"
+            fields:
+              - { label: 品种名（显示用）, name: name, widget: string }
+              - { label: 周龄, name: weeks, widget: number, value_type: int, min: 1 }
+              - { label: 封面图, name: poster, widget: image }
+              - { label: 视频文件路径（如 assets/video/crested.mp4）, name: src, widget: string, required: false, hint: "上传到 assets/video/ 后填相对路径，留空则只显示封面" }
+
+  - name: testimonials
+    label: 客户评价
+    files:
+      - name: testimonials_list
+        label: 评价列表
+        file: content/testimonials.json
+        fields:
+          - label: 评价
+            name: items
+            widget: list
+            summary: "{{fields.name}} · {{fields.country}}"
+            fields:
+              - { label: 姓名, name: name, widget: string }
+              - { label: 国家/城市, name: country, widget: string }
+              - { label: 星级 1-5, name: rating, widget: number, value_type: int, min: 1, max: 5, default: 5 }
+              - { label: 评价内容, name: quote, widget: text }
