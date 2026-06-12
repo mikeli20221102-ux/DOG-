@@ -12,8 +12,8 @@ backend:
 media_folder: assets/img
 public_folder: /assets/img
 
-site_url: https://your-site.netlify.app
-display_url: https://your-site.netlify.app
+site_url: https://udog.netlify.app
+display_url: https://udog.netlify.app
 logo_url: /assets/img/crested-1.jpg
 
 locale: zh_Hans
