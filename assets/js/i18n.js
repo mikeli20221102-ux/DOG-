@@ -19,9 +19,10 @@ const RTL_LANGS = ["ar"];
 const I18N = {};
 
 I18N.en = {
-  "meta.title": "Pawsport — Rare Chinese Dog Breeds, Hand-Delivered Worldwide",
-  "meta.description": "Reserve rare and beloved Chinese dog breeds — Chinese Crested, Chow Chow, Shar-Pei, Pekingese and more. Live video viewing, full health documentation, professional white-glove delivery worldwide.",
+  "meta.title": "Chinese Dog Breeds for Sale — Chow Chow, Shih Tzu, Crested | Pawsport",
+  "meta.description": "Buy Chinese dog breeds from China — Chow Chow, Shih Tzu, Chinese Crested, Pekingese, Shar-Pei. Live video viewing, vet-checked puppies, escorted delivery to Korea, Japan, Middle East & worldwide.",
   "nav.breeds": "Breeds",
+  "nav.guides": "Guides",
   "nav.how": "How it works",
   "nav.delivery": "Delivery",
   "nav.faq": "FAQ",
@@ -125,6 +126,7 @@ I18N.en = {
   "nav.about": "About",
   "nav.reviews": "Reviews",
   "breeds.details": "View details",
+  "breeds.learn": "Full page",
   "detail.about": "About the breed",
   "detail.traits": "At a glance",
   "detail.cta": "Inquire about this breed",
@@ -200,6 +202,7 @@ I18N.zh = {
   "meta.title": "Pawsport — 稀有中国犬种，全球专人送达",
   "meta.description": "预订稀有人气中国犬种——中国冠毛犬、松狮、沙皮、京巴等。视频实时看狗、完整健康文件、专业白手套全球送达。",
   "nav.breeds": "犬种",
+  "nav.guides": "指南",
   "nav.how": "购买流程",
   "nav.delivery": "交付",
   "nav.faq": "常见问题",
@@ -375,9 +378,10 @@ I18N.zh = {
 };
 
 I18N.ko = {
-  "meta.title": "Pawsport — 희귀 중국 견종, 전 세계 직접 배송",
-  "meta.description": "희귀하고 사랑받는 중국 견종 예약 — 차이니즈 크레스티드, 차우차우, 샤페이, 페키니즈 등. 실시간 영상 확인, 완전한 건강 서류, 전문 화이트글러브 배송.",
+  "meta.title": "희귀 중국 견종 분양 — 시츄·차우차우·크레스티드 | Pawsport",
+  "meta.description": "중국에서 수입하는 희귀 견종 — 차우차우, 시츄, 채니즈 크레스티드, 페키니즈. 실시간 영상 확인, 건강 서류 완비, 한국·동남아·중동 전문 배송.",
   "nav.breeds": "견종",
+  "nav.guides": "가이드",
   "nav.how": "이용 방법",
   "nav.delivery": "배송",
   "nav.faq": "자주 묻는 질문",
@@ -480,9 +484,10 @@ I18N.ko = {
 };
 
 I18N.ja = {
-  "meta.title": "Pawsport — 希少な中国の犬種を世界へ直接お届け",
-  "meta.description": "希少で人気の中国犬種を予約 — チャイニーズ・クレステッド、チャウチャウ、シャーペイ、ペキニーズなど。ライブ映像確認、完全な健康書類、専門のホワイトグローブ配送。",
+  "meta.title": "中国犬種の輸入 — チャウチャウ・シーズー・チャイクレ | Pawsport",
+  "meta.description": "中国から希少犬種を輸入 — チャウチャウ、シーズー、チャイニーズ・クレステッド、ペキニーズ。ライブ映像確認、健康書類完備、日本・韓国・中東への専門配送。",
   "nav.breeds": "犬種",
+  "nav.guides": "ガイド",
   "nav.how": "ご利用の流れ",
   "nav.delivery": "お届け",
   "nav.faq": "よくある質問",

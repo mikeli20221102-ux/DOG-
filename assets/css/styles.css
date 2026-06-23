@@ -223,7 +223,8 @@ img { display: block; max-width: 100%; }
 .breed-card h3 { margin-bottom: 0.1rem; }
 .breed-card .zh { font-size: 0.85rem; color: var(--muted); margin-bottom: 0.6rem; }
 .breed-card p.desc { font-size: 0.92rem; color: var(--ink-soft); margin-bottom: 1rem; }
-.breed-card .foot { margin-top: auto; display: flex; align-items: center; justify-content: space-between; }
+.breed-card .foot { margin-top: auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem; }
+.breed-card .foot-actions { display: flex; gap: 0.5rem; flex-wrap: wrap; }
 .breed-card .price { font-weight: 600; color: var(--ink); font-size: 0.95rem; }
 .breed-card .price span { display: block; font-size: 0.72rem; color: var(--muted); font-weight: 500; }
 
@@ -468,3 +469,52 @@ html[lang="th"] h1, html[lang="th"] h2, html[lang="th"] h3, html[lang="th"] h4 {
 [dir="rtl"] .ticks li::before { left: auto; right: 0; transform: rotate(45deg); }
 [dir="rtl"] .lead { margin-left: auto; }
 [dir="rtl"] .video-card .play span::after { border-left: 0; border-right: 16px solid var(--green); margin-left: 0; margin-right: 4px; }
+
+/* SEO subpages — breeds, guides, markets */
+.subpage .section { padding-top: 2rem; }
+.article-page { padding: clamp(2.5rem, 5vw, 4rem) 0 4rem; }
+.breadcrumb { font-size: 0.85rem; color: var(--muted); margin-bottom: 1.2rem; }
+.breadcrumb a { color: var(--green); }
+.breadcrumb a:hover { text-decoration: underline; }
+.breadcrumb span { margin: 0 0.35rem; }
+.article-page .lead { font-size: 1.1rem; color: var(--ink-soft); max-width: 52ch; }
+.prose { margin-top: 1.5rem; }
+.prose h2 { margin-top: 2rem; font-size: 1.35rem; }
+.prose ul, .prose ol { padding-left: 1.25rem; margin: 0 0 1rem; }
+.prose li { margin-bottom: 0.45rem; }
+.prose a { color: var(--green); text-decoration: underline; }
+.article-cta { margin-top: 2.5rem; }
+.article-cta.center { text-align: center; }
+.breed-hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+  align-items: center;
+  margin: 1.5rem 0 2rem;
+}
+.breed-hero-img img {
+  width: 100%;
+  border-radius: var(--radius);
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  box-shadow: var(--shadow);
+}
+.price-line { font-size: 1.1rem; margin: 1rem 0 1.5rem; }
+.price-line span { font-size: 0.85rem; color: var(--muted); }
+.guide-list { list-style: none; padding: 0; margin: 0 0 2rem; }
+.guide-list li { border-bottom: 1px solid var(--line); }
+.guide-list a {
+  display: block;
+  padding: 1rem 0;
+  color: inherit;
+}
+.guide-list a:hover strong { color: var(--green); }
+.guide-list strong { display: block; font-family: "Fraunces", serif; font-size: 1.05rem; }
+.guide-list span { display: block; font-size: 0.88rem; color: var(--muted); margin-top: 0.25rem; }
+.data-table { width: 100%; border-collapse: collapse; margin: 1rem 0 1.5rem; font-size: 0.92rem; }
+.data-table th, .data-table td { border: 1px solid var(--line); padding: 0.6rem 0.75rem; text-align: left; }
+.data-table th { background: var(--surface-alt); font-weight: 600; }
+@media (max-width: 768px) {
+  .breed-hero { grid-template-columns: 1fr; }
+  .breed-hero-img { order: -1; }
+}

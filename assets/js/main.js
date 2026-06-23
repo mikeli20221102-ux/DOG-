@@ -11,6 +11,15 @@ const CONFIG = {
   facebook: "https://www.facebook.com/profile.php?id=100094280424574",
 };
 
+const BREED_SLUG = {
+  chow: "chow-chow",
+  shihtzu: "shih-tzu",
+  crested: "chinese-crested",
+  pekingese: "pekingese",
+  sharpei: "shar-pei",
+  chongqing: "chongqing-dog",
+};
+
 let BREEDS = [];
 let VIDEOS = [];
 let TESTIMONIALS = [];
@@ -145,14 +154,26 @@ function renderBreeds() {
         <p class="desc">${breedField(b, "desc")}</p>
         <div class="foot">
           <div class="price">${priceRange(b.priceFrom)}<span>${t("breeds.note")}</span></div>
-          <button class="btn btn-small" data-idx="${idx}">${t("breeds.details")}</button>
+          <div class="foot-actions">
+            <a class="btn btn-small btn-ghost" href="breeds/${BREED_SLUG[b.key] || b.key}.html">${t("breeds.learn")}</a>
+            <button class="btn btn-small" data-idx="${idx}">${t("breeds.details")}</button>
+          </div>
         </div>
       </div>
     </article>`;
   }).join("");
 
   grid.querySelectorAll(".breed-card").forEach((card) => {
-    card.addEventListener("click", () => openBreedModal(+card.dataset.idx));
+    card.addEventListener("click", (e) => {
+      if (e.target.closest("a")) return;
+      openBreedModal(+card.dataset.idx);
+    });
+  });
+  grid.querySelectorAll(".breed-card .btn-small[data-idx]").forEach((btn) => {
+    btn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      openBreedModal(+btn.dataset.idx);
+    });
   });
 }
 

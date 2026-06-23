@@ -5,10 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Pawsport — Premium Chinese Dog Breeds, Hand-Delivered Worldwide</title>
   <meta name="description" id="metaDesc" content="Reserve rare and beloved Chinese dog breeds — Chinese Crested, Chow Chow, Shar-Pei, Pekingese and more. Live video viewing, full health documentation, professional white-glove delivery worldwide." />
+  <meta name="site-url" content="https://udog.netlify.app/" />
 
   <!-- SEO: canonical + hreflang alternates are filled in by assets/js/i18n.js.
        Set CONFIG.siteUrl in assets/js/main.js to your real domain for production. -->
   <link rel="canonical" id="canonicalLink" href="" />
+  <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
 
   <!-- Open Graph / social -->
   <meta property="og:type" content="website" />
@@ -26,6 +28,16 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&family=Noto+Sans+Arabic:wght@400;500;600&family=Noto+Sans+Thai:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="assets/css/styles.css" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Pawsport",
+    "url": "https://udog.netlify.app/",
+    "description": "Premium Chinese dog breeds exported worldwide with live video viewing, full health documentation and escorted delivery.",
+    "email": "Mikeli20221102@gmail.com"
+  }
+  </script>
 </head>
 <body>
   <header class="site-header" id="top">
@@ -35,6 +47,7 @@
       </a>
       <nav class="nav-links" id="navLinks">
         <a href="#breeds" data-i18n="nav.breeds">Breeds</a>
+        <a href="guide/index.html" data-i18n="nav.guides">Guides</a>
         <a href="#about" data-i18n="nav.about">About</a>
         <a href="#how" data-i18n="nav.how">How it works</a>
         <a href="#reviews" data-i18n="nav.reviews">Reviews</a>
@@ -343,6 +356,9 @@
       <div>
         <h4 data-i18n="footer.explore">Explore</h4>
         <a href="#breeds" data-i18n="nav.breeds">Breeds</a>
+        <a href="guide/index.html" data-i18n="nav.guides">Guides</a>
+        <a href="markets/korea.html">Korea</a>
+        <a href="markets/japan.html">Japan</a>
         <a href="#how" data-i18n="nav.how">How it works</a>
         <a href="#delivery" data-i18n="nav.delivery">Delivery</a>
         <a href="#faq" data-i18n="nav.faq">FAQ</a>
