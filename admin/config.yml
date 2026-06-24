@@ -11,8 +11,8 @@ backend:
   name: git-gateway
   branch: main
 
-# 本地后台（推荐日常改内容用）：取消下一行注释，并运行 `npx decap-server`
-# local_backend: true
+# 本地后台已开启：双击 admin-local.bat 即可在本机打开可视化后台上传图片
+local_backend: true
 
 media_folder: assets/img
 public_folder: /assets/img
@@ -102,7 +102,7 @@ collections:
               - { label: 品种名（显示用）, name: name, widget: string }
               - { label: 周龄, name: weeks, widget: number, value_type: int, min: 1 }
               - { label: 封面图, name: poster, widget: image }
-              - { label: 视频文件路径（如 assets/video/crested.mp4）, name: src, widget: string, required: false, hint: "上传到 assets/video/ 后填相对路径，留空则只显示封面" }
+              - { label: 视频链接（推荐 YouTube/Vimeo）或本地路径, name: src, widget: string, required: false, hint: "推荐填 YouTube/Vimeo 链接（不占空间、海外快）；也可填 assets/video/xx.mp4（须小于 25MB）。留空则只显示封面图" }
 
   - name: testimonials
     label: 客户评价

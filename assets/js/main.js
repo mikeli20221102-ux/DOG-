@@ -277,6 +277,20 @@ function renderTestimonials() {
   }).join("");
 }
 
+// Turn a YouTube/Vimeo URL into an embeddable player URL.
+// Returns null for local mp4 files (played via <video>).
+function videoEmbedUrl(src) {
+  if (!src) return null;
+  let m;
+  if ((m = src.match(/(?:youtube\.com\/(?:watch\?v=|shorts\/|embed\/)|youtu\.be\/)([\w-]{11})/))) {
+    return `https://www.youtube.com/embed/${m[1]}?autoplay=1&rel=0`;
+  }
+  if ((m = src.match(/vimeo\.com\/(?:video\/)?(\d+)/))) {
+    return `https://player.vimeo.com/video/${m[1]}?autoplay=1`;
+  }
+  return null;
+}
+
 function renderVideos() {
   const grid = document.getElementById("videoGrid");
   if (!grid) return;
@@ -295,7 +309,12 @@ function renderVideos() {
     card.addEventListener("click", () => {
       const v = VIDEOS[card.dataset.idx];
       if (!v || !v.src) return;
-      card.innerHTML = `<video controls autoplay playsinline src="${v.src}"></video>`;
+      const embed = videoEmbedUrl(v.src);
+      if (embed) {
+        card.innerHTML = `<iframe src="${embed}" title="${v.name}" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="width:100%;aspect-ratio:16/9;border:0;border-radius:inherit;display:block"></iframe>`;
+      } else {
+        card.innerHTML = `<video controls autoplay playsinline src="${v.src}"></video>`;
+      }
     });
   });
 }
