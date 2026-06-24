@@ -1,110 +1,106 @@
-# Decap CMS 后台 — 开通指南
+# 后台管理指南（Cloudflare 版）
 
-后台地址：**https://你的域名/admin/**  
-在这里可以：改价格、上传图片、新增/下架犬种、改评价和数据条，**不用改代码**。
+> 站点已迁到 **Cloudflare Pages**，正式域名 **https://silkroadpaws.com**。
+> 后台用来**改价格、传图片、上新品种、改评价**，不用动代码。
 
-> ⚠️ 后台必须配合 **GitHub + Netlify 自动部署** 才能保存。  
-> 如果还是只用「拖拽上传」、没有 Git，后台无法写入。
-
----
-
-## 第一步：代码放到 GitHub（约 10 分钟）
-
-1. 注册/登录 [github.com](https://github.com)
-2. 右上角 **New repository** → 名字如 `pawsport-site` → **Public** → Create
-3. 把本地 `pawsport-site` 文件夹上传到仓库：
-   - 网页：仓库页 **Add file → Upload files**，拖入整个文件夹内容（含 `admin/`、`content/`）
-   - 或安装 [GitHub Desktop](https://desktop.github.com)，Clone 空仓库 → 复制文件 → Commit → Push
-
-确保仓库根目录有：`index.html`、`admin/`、`content/`、`assets/`、`netlify.toml`
+⚠️ 重要：原来的 Netlify 邮箱登录（git-gateway + Identity）**离开 Netlify 后不能用了**。
+下面给你 3 种在 Cloudflare 上改内容的方式，按从易到难排序。
 
 ---
 
-## 第二步：Netlify 连接 GitHub（替代拖拽）
+## 方式一：本地后台（推荐日常使用，开箱即用）
 
-1. [app.netlify.com](https://app.netlify.com) → **Add new site → Import an existing project**
-2. 选 **GitHub** → 授权 → 选 `pawsport-site` 仓库
-3. 构建设置（一般自动识别）：
-   - **Build command**：留空
-   - **Publish directory**：`.`（一个点）
-4. **Deploy site** → 得到固定网址，如 `https://pawsport.netlify.app`
+可视化界面，和原来 `/admin` 一模一样，只是跑在你自己电脑上。
 
-以后：**改 GitHub 上的文件 = 自动重新部署**，不用再拖拽。
+**一次性准备：** 安装 [Node.js](https://nodejs.org)（LTS 版）。
 
----
+**每次改内容：**
 
-## 第三步：开启登录（Identity + Git Gateway）
+1. 打开 `admin/config.yml`，把这一行的注释去掉：
+   ```yaml
+   local_backend: true
+   ```
+2. 在 `pawsport-site` 目录开两个终端：
+   - 终端 A：`npx decap-server`
+   - 终端 B：`python -m http.server 8080`
+3. 浏览器打开 **http://localhost:8080/admin/**
+4. 直接改价格、传图、加品种 → 点 **Publish**（会写入本地文件）
+5. 改完后推送上线：双击 `deploy.bat`，或 `git add -A && git commit -m "更新内容" && git push`
+6. 1–2 分钟后 https://silkroadpaws.com 自动更新
 
-1. Netlify 项目 → **Site configuration → Identity**
-2. 点 **Enable Identity**
-3. **Identity → Settings and usage → Registration** → 选 **Invite only**（只允许你邀请的人进后台）
-4. **Identity → Services → Git Gateway** → **Enable Git Gateway**
-5. **Identity → Invite users** → 输入你的邮箱 → 收邮件设密码
-
----
-
-## 第四步：改后台配置里的域名
-
-编辑仓库里的 `admin/config.yml`，把这两行改成你的 Netlify 网址：
-
-```yaml
-site_url: https://pawsport.netlify.app
-display_url: https://pawsport.netlify.app
-```
-
-保存并 Push → 等 Netlify 自动部署完成。
+> 上线前记得把 `local_backend: true` 重新注释掉（避免线上误用）。
 
 ---
 
-## 第五步：登录后台
+## 方式二：GitHub 网页直接改（零安装，最省事）
 
-1. 浏览器打开 **https://你的域名/admin/**
-2. 用第三步邀请的邮箱登录
-3. 左侧菜单：
-   - **站点设置** — 邮箱、WhatsApp、Facebook、数据条数字、首页/关于我们图片
-   - **犬种管理** — 改价、上传封面和相册、新增品种（填 ID、英文名、起价、图文）
-   - **视频** — 封面和视频路径
-   - **客户评价** — 增删改评价
+适合只改文字/价格的小改动。
 
-改完点 **Publish** → 约 1–2 分钟网站自动更新。
+1. 打开仓库 `https://github.com/mikeli20221102-ux/DOG-`
+2. 进入 `content/` → 点要改的文件：
+   - `breeds.json` — 品种、价格（`priceFrom`）、图片、介绍
+   - `settings.json` — 邮箱、WhatsApp、Facebook、数据条
+   - `testimonials.json` — 客户评价
+   - `videos.json` — 视频
+3. 点右上角铅笔 ✏️ **Edit** → 改完 → **Commit changes**
+4. Cloudflare 自动重新部署，1–2 分钟生效
+
+> 传图片：进入 `assets/img/` → **Add file → Upload files**，文件名按 `assets/img/README.txt` 约定（如 `chow-1.jpg`）。
 
 ---
 
-## 新增一个犬种（后台操作）
+## 方式三：线上可视化后台（GitHub 登录，高级）
 
-1. **犬种管理 → 所有犬种 → 犬种列表 → Add 犬种列表 item**
+想在任何电脑打开 `https://silkroadpaws.com/admin/` 登录改内容，需要把后台从
+Netlify 登录改成 **GitHub OAuth 登录**。步骤概览：
+
+1. GitHub → **Settings → Developer settings → OAuth Apps → New OAuth App**
+   - Homepage URL：`https://silkroadpaws.com`
+   - Authorization callback URL：你的 OAuth 中转地址
+   - 拿到 **Client ID** 和 **Client Secret**
+2. 部署一个 OAuth 中转（Cloudflare Worker / Pages Functions，用来安全地换取登录令牌）
+3. 改 `admin/config.yml` 的 backend：
+   ```yaml
+   backend:
+     name: github
+     repo: mikeli20221102-ux/DOG-
+     branch: main
+     base_url: https://你的OAuth中转域名
+   ```
+4. 删除 `admin/index.html` 里的 Netlify Identity 脚本那一行
+5. 推送后访问 `/admin/` → **Login with GitHub**
+
+> 这步需要 OAuth App 的 Client ID/Secret 和一个中转服务，配置较多。
+> 准备好后告诉我，我可以帮你改好 `config.yml`、`admin/index.html` 并给出 Worker 代码。
+
+---
+
+## 新增一个犬种（方式一/三 的可视化后台里操作）
+
+1. **犬种管理 → 所有犬种 → 犬种列表 → Add item**
 2. 填写：
-   - **ID**：英文小写，如 `samoyed`（创建后勿改）
+   - **ID（key）**：英文小写，如 `samoyed`（创建后勿改）
    - **上架显示**：勾选
    - **英文名 / 中文名**
-   - **起价 USD**（网站自动显示「起价～3 倍」区间）
+   - **起价 USD**（网站自动显示「起价 ～ 3 倍」区间）
    - **封面图**、**详情相册**（点 Upload 直接传图）
-   - 中英文标签、介绍、体型/性格等
+   - 中英文标签、介绍、体型 / 性格等
 3. **Publish** → 前台自动出现新品种，询单下拉也会更新
+
+> 若用方式二（GitHub 改 JSON），照着 `breeds.json` 里已有品种的结构，复制一段改成新品种即可。
 
 ---
 
 ## 常见问题
 
-**Q：/admin 打开空白或报错？**  
-确认已 Deploy 且 `admin/config.yml` 在仓库里；Identity 和 Git Gateway 已开启。
+**Q：线上 https://silkroadpaws.com/admin/ 打开后登录失败？**
+正常 —— 那是旧的 Netlify 登录。请改用上面的方式一或方式二；要线上登录走方式三。
 
-**Q：Publish 后前台没变？**  
-等 Netlify Deploy 完成（Deploys 页看绿色 ✓）；浏览器强制刷新。
+**Q：Publish / push 后前台没变？**
+等 Cloudflare 部署完成（Pages 项目 → Deployments 看状态）；浏览器强制刷新（Ctrl+F5）。
 
-**Q：还想本地预览？**  
-在 `pawsport-site` 目录：`python -m http.server 8080`，打开 http://localhost:8080
+**Q：视频文件怎么传？**
+把 mp4 上传到 `assets/video/`，在「视频」里填路径如 `assets/video/新品种.mp4`。
 
-**Q：视频文件怎么传？**  
-Decap 默认媒体库在 `assets/img/`。视频建议仍放到 `assets/video/`，在后台「视频」里填路径如 `assets/video/新品种.mp4`，通过 GitHub 网页上传 mp4 到该文件夹。
-
----
-
-## 和之前拖拽的关系
-
-| 方式 | 更新网站 | 能用 /admin 后台 |
-|------|----------|------------------|
-| Netlify Drop 拖拽 | ✅ | ❌ |
-| GitHub + Netlify（推荐） | ✅ 自动 | ✅ |
-
-**建议：完成本指南后，只用 GitHub 更新，不再用 Drop。**
+**Q：本地预览整站？**
+`pawsport-site` 目录运行 `python -m http.server 8080`，打开 http://localhost:8080

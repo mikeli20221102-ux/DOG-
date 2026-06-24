@@ -21,17 +21,18 @@ pawsport-site/
 │   └── js/
 │       ├── i18n.js       # 界面多语言（9 种）
 │       └── main.js       # 从 content/*.json 加载并渲染
-├── netlify.toml
-├── CMS-SETUP.md          # ★ 后台开通步骤（GitHub + Netlify）
+├── netlify.toml          # 旧 Netlify 配置，Cloudflare 会忽略，可保留
+├── DEPLOY.md             # ★ 部署上线步骤（Cloudflare Pages + silkroadpaws.com）
+├── CMS-SETUP.md          # ★ 后台改内容的 3 种方式
 └── README.md
 ```
 
 ## 后台管理（Decap CMS）
 
-**改价格、传图片、上新品种** → 打开 **`/admin`** 网页后台，不用改代码。
+**改价格、传图片、上新品种** → 见 **`CMS-SETUP.md`**，不用改代码。
 
-前提：按 **`CMS-SETUP.md`** 把站点连到 **GitHub + Netlify**（开启 Identity 登录）。  
-纯拖拽 Drop 部署**无法**使用后台保存。
+站点托管在 **Cloudflare Pages**（正式域名 https://silkroadpaws.com）。
+日常改内容推荐：**本地后台** `npx decap-server`，或直接在 **GitHub 网页**改 `content/*.json`。
 
 ## 多语言
 
@@ -55,11 +56,11 @@ Bahasa Indonesia / العربية（自动右到左 RTL）/ Русский**。
   `x-default`），告诉 Google 各语言版本的对应关系。
 - **`?lang=` 链接**：切换语言时地址栏会带上 `?lang=ko` 等参数，便于分享与抓取；
   `canonical` 也随之指向对应语言 URL。
-- **正式域名**：默认按当前部署域名自动生成 URL。上线后建议在 `index.html` 的
-  `<head>` 加一行固定域名，让 canonical/hreflang 用正式地址：
+- **正式域名**：已在 `index.html` 的 `<head>` 固定为正式地址，canonical/hreflang
+  会基于它生成：
 
 ```html
-<meta name="site-url" content="https://你的域名.com/" />
+<meta name="site-url" content="https://silkroadpaws.com/" />
 ```
 
 ## 本地预览
@@ -91,15 +92,11 @@ python -m http.server 8080
 3. **品种**：在 `BREEDS` 数组增删品种、改文案与"from $价格"。
 4. **文案/品牌**：站点为英文（面向海外买家）。品牌名 `Pawsport` 可在 `index.html` 与样式中替换。
 
-## 部署（对应前面的"路线 A：境外节点 + Cloudflare"）
+## 部署
 
-纯静态，任选其一，**建议放境外节点、避免 ICP 备案**：
+**当前线上：Cloudflare Pages + 域名 `silkroadpaws.com` —— 完整步骤见 `DEPLOY.md`。**
 
-- **Cloudflare Pages / Netlify / Vercel**（推荐，免费、自带 CDN+HTTPS）：
-  把 `pawsport-site/` 作为项目根目录，无需构建命令，直接拖拽或连 Git 部署。
-- **VPS（香港/新加坡）**：上传到 Nginx 站点目录即可（`root /var/www/pawsport-site;`）。
-
-域名建议用 Cloudflare Registrar / Namecheap，并在 Cloudflare 开启 CDN + HTTPS。
+纯静态，无需构建命令，连 GitHub 自动部署、避免 ICP 备案。更新只需 `git push`（或双击 `deploy.bat`）。
 
 ## 合规与支付提醒
 

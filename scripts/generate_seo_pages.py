@@ -10,7 +10,7 @@ if sys.platform == "win32":
     sys.stdout.reconfigure(encoding="utf-8")
 
 ROOT = Path(__file__).resolve().parents[1]
-SITE = "https://udog.netlify.app"
+SITE = "https://silkroadpaws.com"
 
 BREEDS = [
     {
