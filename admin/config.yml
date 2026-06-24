@@ -1,18 +1,15 @@
-# Decap CMS — Pawsport 后台
-# 站点已迁移到 Cloudflare Pages，正式域名：https://silkroadpaws.com
-#
-# 关于登录（重要，见 CMS-SETUP.md）：
-#   - 下面的 git-gateway 依赖 Netlify Identity，迁到 Cloudflare 后线上登录会失效。
-#   - 当前推荐用「本地后台」改内容：在 pawsport-site 目录运行 `npx decap-server`，
-#     并把下面的 local_backend 取消注释，然后打开 http://localhost:8080/admin/
-#   - 想要线上可视化后台，需改成 GitHub OAuth 登录（CMS-SETUP.md 第四节）。
+# Sveltia CMS — Pawsport 后台（线上版，运营用 GitHub 账号登录）
+# 正式后台：https://silkroadpaws.com/admin/
+# 搭建步骤见项目根目录 ADMIN-ONLINE.md（建 OAuth App + 一键部署登录 Worker）
 
 backend:
-  name: git-gateway
+  name: github
+  repo: mikeli20221102-ux/DOG-
   branch: main
+  base_url: https://sveltia-cms-auth11.mikeli20221102.workers.dev
 
-# 本地后台已开启：双击 admin-local.bat 即可在本机打开可视化后台上传图片
-local_backend: true
+# 本地后台（可选，仅你自己电脑改内容时用）：取消下一行注释并运行 `npx decap-server`
+# local_backend: true
 
 media_folder: assets/img
 public_folder: /assets/img
