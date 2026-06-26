@@ -7,8 +7,11 @@
 const CONFIG = {
   email: "Mikeli20221102@gmail.com",
   formEndpoint: "https://formspree.io/f/xbdeaabj",
-  whatsapp: "639053191026",
+  whatsapp: "6309686027507",
   facebook: "https://www.facebook.com/profile.php?id=100094280424574",
+  // Google Analytics 4 measurement ID, e.g. "G-XXXXXXXXXX".
+  // Leave "" to disable, or set it in content/settings.json (ga4).
+  ga4: "",
 };
 
 const BREED_SLUG = {
@@ -26,6 +29,47 @@ let TESTIMONIALS = [];
 let SETTINGS = {};
 
 const PLACEHOLDER = "https://placedog.net/600/450?id=";
+
+/* ---------------------- analytics ---------------------- */
+
+// Loads GA4 (if CONFIG.ga4 is set) and exposes a tiny track() helper.
+// track() is safe to call even before GA4 loads (queues into dataLayer).
+function initAnalytics() {
+  if (!CONFIG.ga4) return;
+  window.dataLayer = window.dataLayer || [];
+  window.gtag = function () { window.dataLayer.push(arguments); };
+  const s = document.createElement("script");
+  s.async = true;
+  s.src = `https://www.googletagmanager.com/gtag/js?id=${CONFIG.ga4}`;
+  document.head.appendChild(s);
+  window.gtag("js", new Date());
+  window.gtag("config", CONFIG.ga4);
+}
+
+function track(event, params) {
+  try {
+    if (typeof window.gtag === "function") window.gtag("event", event, params || {});
+    else (window.dataLayer = window.dataLayer || []).push({ event, ...(params || {}) });
+  } catch (_) { /* never break UX for analytics */ }
+}
+
+// Delegated tracking for key conversions across home + future pages.
+function initConversionTracking() {
+  document.addEventListener("click", (e) => {
+    const a = e.target.closest("a, button");
+    if (!a) return;
+    const href = (a.getAttribute("href") || "").toLowerCase();
+    if (a.classList.contains("js-wa") || href.includes("wa.me") || href.includes("whatsapp")) {
+      track("contact_whatsapp", { method: "whatsapp" });
+    } else if (a.classList.contains("js-fb") || href.includes("facebook.com")) {
+      track("contact_facebook", { method: "facebook" });
+    } else if (href.startsWith("mailto:")) {
+      track("contact_email", { method: "email" });
+    } else if (href.includes("#inquire") || /reserve|inquire/i.test(a.textContent || "")) {
+      track("reserve_click", { location: a.dataset.loc || "cta" });
+    }
+  }, { capture: true });
+}
 
 /* ---------------------- content loading ---------------------- */
 
@@ -52,6 +96,7 @@ async function loadContent() {
       formEndpoint: settings.formEndpoint || CONFIG.formEndpoint,
       whatsapp: settings.whatsapp || CONFIG.whatsapp,
       facebook: settings.facebook || CONFIG.facebook,
+      ga4: settings.ga4 || CONFIG.ga4,
     });
 
     applySettings(settings);
@@ -376,6 +421,7 @@ function initForm() {
         `Name: ${name}\nEmail: ${email}\nWhatsApp/Phone: ${data.get("whatsapp")}\n` +
         `Country/City: ${country}\nBreed: ${data.get("breed")}\n\n${data.get("message")}`
       );
+      track("generate_lead", { method: "mailto", breed: (data.get("breed") || "").toString(), country });
       window.location.href = `mailto:${CONFIG.email}?subject=${subject}&body=${body}`;
       note.classList.add("ok");
       note.textContent = t("form.opening");
@@ -389,6 +435,7 @@ function initForm() {
         headers: { Accept: "application/json" },
       });
       if (res.ok) {
+        track("generate_lead", { method: "formspree", breed: (data.get("breed") || "").toString(), country });
         form.reset();
         note.classList.add("ok");
         note.textContent = t("form.thanks");
@@ -407,6 +454,8 @@ function initForm() {
 document.addEventListener("DOMContentLoaded", async () => {
   initI18n();
   await loadContent();
+  initAnalytics();
+  initConversionTracking();
   renderBreeds();
   renderVideos();
   renderTestimonials();

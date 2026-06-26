@@ -19,7 +19,11 @@
   <meta property="og:description" id="ogDesc" content="" />
   <meta property="og:url" id="ogUrl" content="" />
   <meta property="og:locale" id="ogLocale" content="en_US" />
-  <meta property="og:image" content="https://placedog.net/1200/630?id=7" />
+  <meta property="og:image" content="https://silkroadpaws.com/assets/img/og-cover.png" />
+  <meta property="og:image:width" content="1024" />
+  <meta property="og:image:height" content="683" />
+  <meta property="og:image:alt" content="Chow Chow and Shih Tzu puppies from Pawsport" />
+  <meta name="twitter:image" content="https://silkroadpaws.com/assets/img/og-cover.png" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" id="twTitle" content="" />
   <meta name="twitter:description" id="twDesc" content="" />
@@ -31,11 +35,64 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Pawsport",
-    "url": "https://silkroadpaws.com/",
-    "description": "Premium Chinese dog breeds exported worldwide with live video viewing, full health documentation and escorted delivery.",
-    "email": "Mikeli20221102@gmail.com"
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://silkroadpaws.com/#org",
+        "name": "Pawsport",
+        "alternateName": "Silk Road Paws",
+        "url": "https://silkroadpaws.com/",
+        "logo": "https://silkroadpaws.com/assets/img/hero.jpg",
+        "description": "Premium Chinese dog breeds exported worldwide with live video viewing, full health documentation and escorted delivery.",
+        "email": "Mikeli20221102@gmail.com",
+        "sameAs": ["https://www.facebook.com/profile.php?id=100094280424574"],
+        "areaServed": ["Philippines", "South Korea", "Japan", "Middle East", "Worldwide"],
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "contactType": "sales",
+          "availableLanguage": ["en", "zh", "ko", "ja"]
+        }
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://silkroadpaws.com/#website",
+        "url": "https://silkroadpaws.com/",
+        "name": "Pawsport",
+        "publisher": { "@id": "https://silkroadpaws.com/#org" },
+        "inLanguage": "en"
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://silkroadpaws.com/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How is payment handled?",
+            "acceptedAnswer": { "@type": "Answer", "text": "We do not accept online card payments. After your inquiry and a live video viewing, we arrange a deposit by bank transfer with a signed sales contract. The balance is paid on the puppy's safe arrival." }
+          },
+          {
+            "@type": "Question",
+            "name": "Which countries can you deliver to?",
+            "acceptedAnswer": { "@type": "Answer", "text": "It depends on your country's live-animal import rules. We currently focus on markets with workable requirements such as South Korea, Southeast Asia and the Middle East. Some countries restrict or ban commercial dog imports — we'll confirm your country before you reserve." }
+          },
+          {
+            "@type": "Question",
+            "name": "How long does it take?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Because of compliance steps (microchip, rabies vaccination, antibody titer test, health certificate and import permits), delivery typically takes 2-4 months, sometimes longer for stricter destinations." }
+          },
+          {
+            "@type": "Question",
+            "name": "Are the puppies healthy?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Every puppy is vet-checked, vaccinated and microchipped, and comes with pedigree and health documentation plus a health guarantee written into the contract." }
+          },
+          {
+            "@type": "Question",
+            "name": "How does delivery work?",
+            "acceptedAnswer": { "@type": "Answer", "text": "A professional pet escort / flight nanny accompanies your puppy in-person and hand-delivers them to you, coordinating airline, crate and customs paperwork." }
+          }
+        ]
+      }
+    ]
   }
   </script>
 </head>

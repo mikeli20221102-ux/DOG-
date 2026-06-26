@@ -12,6 +12,31 @@ if sys.platform == "win32":
 ROOT = Path(__file__).resolve().parents[1]
 SITE = "https://silkroadpaws.com"
 
+# Google Analytics 4 measurement ID (looks like "G-XXXXXXXXXX").
+# Leave empty to skip injection. Set once here, then re-run this script to
+# bake the tag into every generated subpage. (Home page index.html uses the
+# same ID via assets/js/main.js -> CONFIG.ga4.)
+GA4_ID = ""
+
+
+def ga4_html() -> str:
+    if not GA4_ID:
+        return ""
+    return (
+        f'<script async src="https://www.googletagmanager.com/gtag/js?id={GA4_ID}"></script>\n'
+        f'  <script>window.dataLayer=window.dataLayer||[];function gtag(){{dataLayer.push(arguments);}}'
+        f"gtag('js',new Date());gtag('config','{GA4_ID}');</script>"
+    )
+
+
+def breadcrumb_ld(items: list[tuple[str, str]]) -> str:
+    """items: list of (name, absolute_url)."""
+    elements = ",".join(
+        f'{{"@type":"ListItem","position":{i + 1},"name":"{name}","item":"{url}"}}'
+        for i, (name, url) in enumerate(items)
+    )
+    return f'{{"@type":"BreadcrumbList","itemListElement":[{elements}]}}'
+
 BREEDS = [
     {
         "slug": "chow-chow",
@@ -349,6 +374,7 @@ def shell(title: str, desc: str, path: str, body: str, depth: int = 1, extra_hea
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  {ga4_html()}
   <title>{title}</title>
   <meta name="description" content="{desc}" />
   <meta name="site-url" content="{SITE}/" />
@@ -358,7 +384,9 @@ def shell(title: str, desc: str, path: str, body: str, depth: int = 1, extra_hea
   <meta property="og:description" content="{desc}" />
   <meta property="og:url" content="{canonical}" />
   <meta property="og:site_name" content="Pawsport" />
+  <meta property="og:image" content="{SITE}/assets/img/og-cover.png" />
   <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="{SITE}/assets/img/og-cover.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
@@ -416,8 +444,26 @@ def article_wrap(eyebrow: str, h1: str, lead: str, content: str, cta_breed: str 
 def breed_page(b: dict) -> str:
     path = f"/breeds/{b['slug']}.html"
     prefix = "../"
+    crumbs = breadcrumb_ld([
+        ("Home", f"{SITE}/"),
+        ("Breeds", f"{SITE}/guide/index.html"),
+        (b["name"], f"{SITE}{path}"),
+    ])
+    product = (
+        '{"@type":"Product",'
+        f'"name":"{b["name"]} Puppy",'
+        f'"description":"{b["desc"][:200]}",'
+        f'"image":"{SITE}/assets/img/{b["img"]}",'
+        f'"category":"Dog breeder / live animal — {b["name"]}",'
+        f'"additionalProperty":[{{"@type":"PropertyValue","name":"Origin","value":"China"}},'
+        f'{{"@type":"PropertyValue","name":"Breed (Chinese)","value":"{b["zh"]}"}},'
+        '{"@type":"PropertyValue","name":"Includes","value":"Live video viewing, health & vaccination records, escorted delivery"}],'
+        '"brand":{"@type":"Brand","name":"Pawsport"},'
+        f'"offers":{{"@type":"Offer","priceCurrency":"USD","price":"{b["price"]}","priceValidUntil":"2027-12-31",'
+        f'"availability":"https://schema.org/InStock","url":"{SITE}{path}","seller":{{"@type":"Organization","name":"Pawsport"}}}}}}'
+    )
     json_ld = f"""<script type="application/ld+json">
-{{"@context":"https://schema.org","@type":"Product","name":"{b['name']} Puppy","description":"{b['desc'][:200]}","brand":{{"@type":"Brand","name":"Pawsport"}},"offers":{{"@type":"Offer","priceCurrency":"USD","price":"{b['price']}","availability":"https://schema.org/InStock","url":"{SITE}{path}"}}}}
+{{"@context":"https://schema.org","@graph":[{product},{crumbs}]}}
 </script>"""
     body = f"""
     <article class="article-page">
@@ -447,8 +493,20 @@ def guide_page(g: dict) -> str:
     path = f"/guide/{g['slug']}.html"
     h1 = g["title"].split("—")[0].strip() if "—" in g["title"] else g["title"]
     body = article_wrap(g["eyebrow"], h1, g["desc"][:160], g["body"])
+    crumbs = breadcrumb_ld([
+        ("Home", f"{SITE}/"),
+        ("Guides", f"{SITE}/guide/index.html"),
+        (h1, f"{SITE}{path}"),
+    ])
+    article = (
+        '{"@type":"Article",'
+        f'"headline":"{g["title"]}","description":"{g["desc"][:200]}",'
+        '"author":{"@type":"Organization","name":"Pawsport"},'
+        '"publisher":{"@type":"Organization","name":"Pawsport","url":"' + SITE + '/"},'
+        f'"mainEntityOfPage":"{SITE}{path}"}}'
+    )
     json_ld = f"""<script type="application/ld+json">
-{{"@context":"https://schema.org","@type":"Article","headline":"{g['title']}","description":"{g['desc'][:200]}","author":{{"@type":"Organization","name":"Pawsport"}},"publisher":{{"@type":"Organization","name":"Pawsport"}}}}
+{{"@context":"https://schema.org","@graph":[{article},{crumbs}]}}
 </script>"""
     return shell(g["title"], g["desc"], path, body, 1, "", json_ld)
 
@@ -465,7 +523,15 @@ def market_page(m: dict) -> str:
     <p><a href="../guide/{m['guide']}.html">Read the import guide for this market →</a></p>
     """
     body = article_wrap("Market", m["h1"], m["lead"], content)
-    return shell(m["title"], m["desc"], path, body, 1)
+    crumbs = breadcrumb_ld([
+        ("Home", f"{SITE}/"),
+        ("Markets", f"{SITE}/markets/{m['slug']}.html"),
+        (m["h1"], f"{SITE}{path}"),
+    ])
+    json_ld = f"""<script type="application/ld+json">
+{{"@context":"https://schema.org","@graph":[{crumbs}]}}
+</script>"""
+    return shell(m["title"], m["desc"], path, body, 1, "", json_ld)
 
 
 def guide_index() -> str:
@@ -533,11 +599,25 @@ def main():
         print(f"  markets/{m['slug']}.html")
 
     (ROOT / "sitemap.xml").write_text(sitemap(urls), encoding="utf-8")
+
+    ai_agents = [
+        "GPTBot", "OAI-SearchBot", "ChatGPT-User", "ClaudeBot", "Claude-Web",
+        "anthropic-ai", "PerplexityBot", "Google-Extended", "Applebot-Extended", "CCBot",
+    ]
+    ai_block = "\n\n".join(f"User-agent: {a}\nAllow: /" for a in ai_agents)
+    host = SITE.split("://", 1)[-1]
     (ROOT / "robots.txt").write_text(
-        f"User-agent: *\nAllow: /\nSitemap: {SITE}/sitemap.xml\n",
+        "# Pawsport (Silk Road Paws) — robots\n\n"
+        "# Default: allow all standard search engines\n"
+        "User-agent: *\nAllow: /\n\n"
+        "# AI / LLM crawlers — explicitly allowed for generative-engine citation (GEO)\n"
+        f"{ai_block}\n\n"
+        f"Sitemap: {SITE}/sitemap.xml\n"
+        f"Host: {host}\n",
         encoding="utf-8",
     )
     print(f"\nSitemap: {len(urls)} URLs")
+    print("robots.txt: AI crawlers allowed; llms.txt preserved")
 
 
 if __name__ == "__main__":
