@@ -5,7 +5,7 @@
    ===================================================================== */
 
 const CONFIG = {
-  email: "Mikeli20221102@gmail.com",
+  email: "mikeli20221102@gmail.com",
   formEndpoint: "https://formspree.io/f/xbdeaabj",
   whatsapp: "6309686027507",
   facebook: "https://www.facebook.com/profile.php?id=100094280424574",
