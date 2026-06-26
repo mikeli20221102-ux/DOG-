@@ -6,12 +6,13 @@
       "name": "Shih Tzu",
       "zh": "西施",
       "priceFrom": 898,
-      "coverImage": "/assets/img/13426671953806884.jpeg",
+      "coverImage": "/assets/img/13426668600895031.jpeg",
       "gallery": [
+        "/assets/img/13426916705145038.png",
+        "/assets/img/13426669711572802.jpeg",
         "/assets/img/13426669720478995.jpeg",
         "/assets/img/13426669721930837.jpeg",
-        "/assets/img/13426669711572802.jpeg",
-        "/assets/img/13426669714583546.jpeg"
+        "/assets/img/13426669723581954.jpeg"
       ],
       "tag_en": "Companion",
       "tag_zh": "陪伴犬",
@@ -36,12 +37,13 @@
       "name": "Chow Chow",
       "zh": "松狮",
       "priceFrom": 1500,
-      "coverImage": "/assets/img/13426671920665638.jpeg",
+      "coverImage": "/assets/img/13426671763536172.jpeg",
       "gallery": [
-        "assets/img/chow-1.jpg",
-        "assets/img/chow-2.jpg",
-        "assets/img/chow-3.jpg",
-        "assets/img/chow-4.jpg"
+        "/assets/img/13426671920665638.jpeg",
+        "/assets/img/13426671752478567.jpeg",
+        "/assets/img/13426671759831453.jpeg",
+        "/assets/img/13426671761152222.jpeg",
+        "/assets/img/13426671874434864.jpeg"
       ],
       "tag_en": "Iconic",
       "tag_zh": "标志性",
