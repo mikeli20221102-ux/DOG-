@@ -152,6 +152,36 @@
       "lifespan_zh": "13–18 年",
       "goodwith_en": "Experienced owners, guarding",
       "goodwith_zh": "有经验主人、看护"
+    },
+    {
+      "key": "chinses-crested",
+      "published": true,
+      "name": "Chinese Crested Dog",
+      "zh": "中国冠毛犬",
+      "priceFrom": 1299,
+      "coverImage": "/assets/img/13426675248150148.jpeg",
+      "gallery": [
+        "/assets/img/13426675306276530.jpeg",
+        "/assets/img/13426675275801496.jpeg",
+        "/assets/img/13426675190223730.jpeg",
+        "/assets/img/13426675222651092.jpeg"
+      ],
+      "tag_en": "small (2.3–5 .4kg)",
+      "tag_zh": "小型（2.3-5.4公斤）",
+      "desc_en": "Powder-puff style, fully covered in long, silky fur.",
+      "desc_zh": "粉扑款全身覆盖丝质长毛",
+      "long_en": "The Chinese Crested Dog is an ancient, small toy breed originating in China. It is one of the few dog breeds that possesses sweat glands and can dissipate heat by sweating through its skin. Characterized by a slender, elegant physique and agile movement, it has a gentle, affectionate, and non-aggressive temperament, serving as both a companion and a small ornamental dog.",
+      "long_zh": "中国冠毛犬是源自中国的古老小型玩赏犬，它是少有的自带汗腺、可通过皮肤出汗散热的犬种，体态纤细优雅、动静灵动，性格温顺亲人，无攻击性，兼具伴侣陪伴与小型观赏犬属性。",
+      "size_en": "samll",
+      "size_zh": "小型",
+      "temperament_en": "Gentle, friendly, and quick-witted.",
+      "temperament_zh": "温顺、友善、聪慧机敏",
+      "coat_en": "Long, smooth, and draping",
+      "coat_zh": "长毛顺滑垂坠",
+      "lifespan_en": "12–18 years",
+      "lifespan_zh": "12–18 年",
+      "goodwith_en": "Family, children, apartment",
+      "goodwith_zh": "家庭、孩子、公寓"
     }
   ]
 }
