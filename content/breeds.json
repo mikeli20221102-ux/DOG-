@@ -37,9 +37,9 @@
       "name": "Chow Chow",
       "zh": "松狮",
       "priceFrom": 1500,
-      "coverImage": "/assets/img/13426671763536172.jpeg",
+      "coverImage": "/assets/img/13426671920665638.jpeg",
       "gallery": [
-        "/assets/img/13426671920665638.jpeg",
+        "/assets/img/13426671763536172.jpeg",
         "/assets/img/13426671752478567.jpeg",
         "/assets/img/13426671759831453.jpeg",
         "/assets/img/13426671761152222.jpeg",
@@ -68,12 +68,13 @@
       "name": "Shar-Pei",
       "zh": "沙皮",
       "priceFrom": 900,
-      "coverImage": "assets/img/sharpei-1.jpg",
+      "coverImage": "/assets/img/13426673595327338.jpeg",
       "gallery": [
-        "assets/img/sharpei-1.jpg",
-        "assets/img/sharpei-2.jpg",
-        "assets/img/sharpei-3.jpg",
-        "assets/img/sharpei-4.jpg"
+        "/assets/img/13426673597894409.jpeg",
+        "/assets/img/13426673596594496.jpeg",
+        "/assets/img/13426673510634518.jpeg",
+        "/assets/img/13426673835394524.jpeg",
+        "/assets/img/13426673833969726.jpeg"
       ],
       "tag_en": "Distinctive",
       "tag_zh": "辨识度高",
@@ -98,12 +99,12 @@
       "name": "Pekingese",
       "zh": "京巴 / 北京犬",
       "priceFrom": 1000,
-      "coverImage": "assets/img/pekingese-1.jpg",
+      "coverImage": "/assets/img/13426674138833410.jpeg",
       "gallery": [
-        "assets/img/pekingese-1.jpg",
-        "assets/img/pekingese-2.jpg",
-        "assets/img/pekingese-3.jpg",
-        "assets/img/pekingese-4.jpg"
+        "/assets/img/13426674073424689.jpeg",
+        "/assets/img/13426674110551823.jpeg",
+        "/assets/img/13426674143486044.jpeg",
+        "/assets/img/13426674087603813.jpeg"
       ],
       "tag_en": "Imperial",
       "tag_zh": "宫廷",
@@ -128,12 +129,12 @@
       "name": "Chongqing Dog",
       "zh": "重庆犬",
       "priceFrom": 1800,
-      "coverImage": "assets/img/chongqing-1.jpg",
+      "coverImage": "/assets/img/13426917533066858.png",
       "gallery": [
-        "assets/img/chongqing-1.jpg",
-        "assets/img/chongqing-2.jpg",
-        "assets/img/chongqing-3.jpg",
-        "assets/img/chongqing-4.jpg"
+        "/assets/img/13426674958586885.jpeg",
+        "/assets/img/13426917371870909.jpeg",
+        "/assets/img/13426917373122003.jpeg",
+        "/assets/img/13426917530914405.png"
       ],
       "tag_en": "Very rare",
       "tag_zh": "极稀有",
