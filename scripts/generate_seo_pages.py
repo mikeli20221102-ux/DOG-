@@ -329,6 +329,238 @@ GUIDES = [
 <p><a href="../breeds/chinese-crested.html">View Chinese Crested puppies →</a></p>
 """,
     },
+    {
+        "slug": "cost-to-import-dog-from-china",
+        "title": "How Much Does It Cost to Import a Dog from China? (2026 Breakdown)",
+        "desc": "Full cost breakdown for importing a puppy from China: breed price, microchip, rabies titer test, permits and escort delivery. Real 2026 numbers by breed and destination.",
+        "eyebrow": "Cost guide",
+        "body": """
+<p>The total cost of importing a dog from China has two parts: the <strong>breed price</strong> and the <strong>delivery + compliance cost</strong>. Knowing both up front prevents surprises.</p>
+<h2>1. Breed price (from China)</h2>
+<table class="data-table">
+<tr><th>Breed</th><th>From (USD)</th></tr>
+<tr><td>Shih Tzu / Shar-Pei</td><td>$900</td></tr>
+<tr><td>Pekingese</td><td>$1,000</td></tr>
+<tr><td>Chinese Crested</td><td>$1,200</td></tr>
+<tr><td>Chow Chow</td><td>$1,500</td></tr>
+<tr><td>Chongqing Dog</td><td>$1,800</td></tr>
+</table>
+<h2>2. Compliance costs</h2>
+<ul>
+<li>ISO microchip — included in our preparation</li>
+<li>Rabies vaccination + <a href="rabies-titer-test-explained.html">antibody titer test</a> — typically $80–$200</li>
+<li>Health certificate and export permit — varies by destination country</li>
+</ul>
+<h2>3. Delivery (escort or cargo)</h2>
+<p>International <a href="flight-nanny-vs-cargo.html">flight-nanny or air-cargo delivery</a> is quoted by destination city and breed size — usually the largest single line item. Small breeds to Korea, Japan or Singapore cost less to move than large breeds to the Middle East.</p>
+<h2>How payment works</h2>
+<p>We never take card payments online. After a live video viewing you reserve with a deposit by bank transfer and a signed contract; the balance is paid on safe arrival. See <a href="how-china-dog-export-works.html">the full process</a>.</p>
+""",
+    },
+    {
+        "slug": "rabies-titer-test-explained",
+        "title": "Rabies Antibody Titer Test (RNATT) for Dog Import — Explained",
+        "desc": "What the rabies titer test (RNATT/FAVN) is, why order matters, the 0.5 IU/mL pass mark, and how it affects your dog import timeline from China.",
+        "eyebrow": "Compliance",
+        "body": """
+<p>The rabies antibody titer test (also called <strong>RNATT</strong> or FAVN) is the single most important — and most time-sensitive — step in importing a dog from China to most countries.</p>
+<h2>What it is</h2>
+<p>A blood sample is sent to an approved laboratory to confirm the rabies vaccine produced enough antibodies. A passing result is <strong>≥0.5 IU/mL</strong>.</p>
+<h2>The correct order matters</h2>
+<ol>
+<li>Implant the ISO microchip first</li>
+<li>Give the rabies vaccination (after the chip)</li>
+<li>Wait the required interval, then draw blood for the titer test</li>
+<li>Some countries — such as <a href="import-dogs-japan.html">Japan</a> — require a 180-day wait after the blood draw</li>
+</ol>
+<h2>Why timing is everything</h2>
+<p>If the steps are done out of order, the clock resets. This is the number-one reason imports get delayed — so we plan the full schedule before you reserve.</p>
+<h2>Which countries require it</h2>
+<p>Korea, Japan, the EU, <a href="import-dogs-singapore.html">Singapore</a> and most rabies-controlled destinations require a passing titer. We confirm your country's exact rule first.</p>
+""",
+    },
+    {
+        "slug": "flight-nanny-vs-cargo",
+        "title": "Flight Nanny vs Air Cargo — How Your Puppy Travels Safely",
+        "desc": "Compare flight-nanny (in-cabin escort) and manifest air-cargo delivery for importing a dog from China. Which is best by breed size, route and budget.",
+        "eyebrow": "Delivery",
+        "body": """
+<p>Your puppy can travel two main ways from China to your city. We help you choose based on breed size, route and budget.</p>
+<h2>Flight nanny (in-cabin escort)</h2>
+<ul>
+<li>A professional pet escort flies with your puppy, often in-cabin for small breeds</li>
+<li>Lowest stress — the dog is cared for the whole journey</li>
+<li>Ideal for <a href="../breeds/chinese-crested.html">Chinese Crested</a>, <a href="../breeds/shih-tzu.html">Shih Tzu</a> and other small breeds</li>
+</ul>
+<h2>Manifest air cargo (escorted)</h2>
+<ul>
+<li>Temperature-controlled, IATA-compliant travel crate in the hold</li>
+<li>Required for larger breeds such as <a href="../breeds/chow-chow.html">Chow Chow</a></li>
+<li>Still coordinated and accompanied by our team end-to-end</li>
+</ul>
+<h2>What is always included</h2>
+<p>Airline booking, IATA crate, export and destination paperwork, plus live updates with chain-of-custody photos. You pay the balance on safe arrival.</p>
+""",
+    },
+    {
+        "slug": "chinese-dog-breeds-list",
+        "title": "Rare Chinese Dog Breeds You Can Import — Complete List (2026)",
+        "desc": "A complete list of rare Chinese dog breeds you can import worldwide — Chow Chow, Shih Tzu, Chinese Crested, Pekingese, Shar-Pei and Chongqing Dog — and who each suits.",
+        "eyebrow": "Breed guide",
+        "body": """
+<p>China has some of the world's oldest and rarest dog breeds. Here are the breeds we export, with who each one suits best.</p>
+<h2>The breeds</h2>
+<ul>
+<li><strong><a href="../breeds/chow-chow.html">Chow Chow</a></strong> — lion-maned icon, top seller in the Middle East</li>
+<li><strong><a href="../breeds/shih-tzu.html">Shih Tzu</a></strong> — gentle apartment companion, popular in Korea and Japan</li>
+<li><strong><a href="../breeds/chinese-crested.html">Chinese Crested</a></strong> — rare, low-shedding, cabin-friendly</li>
+<li><strong><a href="../breeds/pekingese.html">Pekingese</a></strong> — imperial lapdog with deep history in Japan</li>
+<li><strong><a href="../breeds/shar-pei.html">Shar-Pei</a></strong> — wrinkled, loyal guardian</li>
+<li><strong><a href="../breeds/chongqing-dog.html">Chongqing Dog</a></strong> — ultra-rare collector breed</li>
+</ul>
+<h2>Which breed is right for you?</h2>
+<p>Apartment in Korea or Japan? Choose <a href="best-apartment-dogs-from-china.html">a small breed</a>. Want a statement dog in the Middle East? Chow Chow or Shar-Pei. Collector seeking rarity? The Chongqing Dog.</p>
+<h2>How importing works</h2>
+<p>Every breed ships with live video viewing, full health documentation and escorted delivery. See <a href="how-china-dog-export-works.html">our 5-step process</a> or <a href="cost-to-import-dog-from-china.html">what it costs</a>.</p>
+""",
+    },
+    {
+        "slug": "import-dogs-philippines",
+        "title": "How to Import a Dog from China to the Philippines (2026 Guide)",
+        "desc": "Step-by-step guide to importing a puppy from China to the Philippines: BAI import permit, microchip, rabies vaccination, timeline and best breeds.",
+        "eyebrow": "Import guide",
+        "body": """
+<p>The Philippines is a strong market for Chinese breeds — <a href="../breeds/chow-chow.html">Chow Chow</a> for premium buyers and <a href="../breeds/shih-tzu.html">Shih Tzu</a> for volume, both very popular on Facebook.</p>
+<h2>Requirements (Bureau of Animal Industry)</h2>
+<ol>
+<li>ISO microchip</li>
+<li>Rabies vaccination</li>
+<li>Veterinary health certificate from China</li>
+<li><strong>Import permit</strong> from the Bureau of Animal Industry (BAI)</li>
+<li>Import clearance on arrival</li>
+</ol>
+<h2>Timeline</h2>
+<p>The Philippines is one of our faster markets — typically <strong>1–2 months</strong> when paperwork is started promptly.</p>
+<h2>Best breeds for the Philippines</h2>
+<p>Chow Chow leads premium demand; Shih Tzu and Pekingese sell in volume. See the <a href="../markets/philippines.html">Philippines market page</a>.</p>
+<h2>How to buy safely</h2>
+<p>Insist on a live video call and a signed contract — read <a href="is-it-safe-to-buy-a-dog-from-china.html">how to avoid scams</a>.</p>
+""",
+    },
+    {
+        "slug": "import-dogs-singapore",
+        "title": "Importing a Dog from China to Singapore — Rules & Timeline",
+        "desc": "How to import a puppy from China to Singapore: NParks/AVS licence, microchip, rabies titer test, quarantine and the best small breeds for HDB and condo living.",
+        "eyebrow": "Import guide",
+        "body": """
+<p>Singapore has strict but clear rules. Small Chinese breeds like <a href="../breeds/shih-tzu.html">Shih Tzu</a> and <a href="../breeds/chinese-crested.html">Chinese Crested</a> are ideal for HDB and condo living.</p>
+<h2>Requirements (NParks / Animal & Veterinary Service)</h2>
+<ol>
+<li>ISO microchip</li>
+<li>At least two rabies vaccinations</li>
+<li>Rabies antibody <a href="rabies-titer-test-explained.html">titer test</a> (≥0.5 IU/mL)</li>
+<li>AVS import licence and advance booking</li>
+<li>Quarantine on arrival (duration depends on country category)</li>
+</ol>
+<h2>Timeline</h2>
+<p>Because of the titer test and licensing, plan for <strong>3–6 months</strong>. We map the full schedule before you reserve.</p>
+<h2>Breed notes</h2>
+<p>Singapore restricts certain breeds and sizes — small companion breeds are the safest choice. We confirm eligibility for your exact breed first.</p>
+""",
+    },
+    {
+        "slug": "import-dogs-russia",
+        "title": "Importing Chinese Dog Breeds to Russia — Guide & Timeline",
+        "desc": "How to import Chow Chow, Shar-Pei and rare Chinese breeds to Russia: microchip, rabies vaccination, health certificate, Rosselkhoznadzor rules and timeline.",
+        "eyebrow": "Import guide",
+        "body": """
+<p>Russia is a strong market for distinctive Chinese breeds — <a href="../breeds/chow-chow.html">Chow Chow</a>, <a href="../breeds/shar-pei.html">Shar-Pei</a> and the rare <a href="../breeds/chongqing-dog.html">Chongqing Dog</a> are especially sought after.</p>
+<h2>Requirements</h2>
+<ol>
+<li>ISO microchip</li>
+<li>Rabies vaccination (valid, given after the microchip)</li>
+<li>Veterinary health certificate</li>
+<li>Import documentation per Rosselkhoznadzor rules</li>
+</ol>
+<h2>Timeline</h2>
+<p>Russia is often <strong>faster</strong> than titer-required markets — typically 1–2 months when started promptly. We confirm current rules before you reserve.</p>
+<h2>Best breeds for Russia</h2>
+<p>Cold-tolerant, statement breeds do best: the Chow Chow's thick coat and the Chongqing Dog's rarity are major draws.</p>
+""",
+    },
+    {
+        "slug": "shih-tzu-price-guide",
+        "title": "Shih Tzu Price Guide — Cost to Import from China",
+        "desc": "Shih Tzu prices from China vs retail in Korea, Japan and the Philippines. What's included, delivery costs and how to import a Shih Tzu safely.",
+        "eyebrow": "Breed guide",
+        "body": """
+<h2>Shih Tzu price ranges</h2>
+<table class="data-table">
+<tr><th>Market</th><th>Typical retail (USD)</th><th>Our starting price</th></tr>
+<tr><td>South Korea</td><td>$700 – $2,000</td><td>From $900 + delivery</td></tr>
+<tr><td>Japan</td><td>$1,000 – $2,500</td><td>From $900 + delivery</td></tr>
+<tr><td>Philippines</td><td>$300 – $900</td><td>From $900 + delivery</td></tr>
+</table>
+<p>Our price is the <strong>breed price from China</strong>; escort delivery is quoted by city. Shih Tzu are small, so delivery is usually economical.</p>
+<h2>What's included</h2>
+<ul>
+<li>Vet check, vaccinations and microchip</li>
+<li>Pedigree and health documents</li>
+<li>Live video viewing before you reserve</li>
+<li>Full export paperwork</li>
+</ul>
+<h2>Why import a Shih Tzu from China</h2>
+<p>China offers strong bloodlines at competitive source pricing. See <a href="../breeds/shih-tzu.html">our Shih Tzu page</a> or the <a href="import-dogs-korea.html">Korea import guide</a>.</p>
+""",
+    },
+    {
+        "slug": "is-it-safe-to-buy-a-dog-from-china",
+        "title": "Is It Safe to Buy a Dog from China? How to Avoid Scams",
+        "desc": "How to safely import a puppy from China: green flags of legitimate sellers, red flags of scams, and why live video plus a signed contract protects you.",
+        "eyebrow": "Buyer trust",
+        "body": """
+<p>Buying a puppy internationally can be safe — if you use the right process. Here is how to protect yourself and spot scams.</p>
+<h2>Green flags (signs of a legitimate seller)</h2>
+<ul>
+<li>Will do a <strong>live video call</strong> showing your actual puppy</li>
+<li>Provides health, vaccination and microchip records</li>
+<li>Uses a <strong>signed contract</strong> with a health guarantee</li>
+<li>Explains the titer test and import permits for your country</li>
+</ul>
+<h2>Red flags (walk away)</h2>
+<ul>
+<li>Refuses live video or only sends stock photos</li>
+<li>Demands full payment by card or crypto with no contract</li>
+<li>Prices far below market with "today only" pressure</li>
+<li>No mention of compliance or delivery details</li>
+</ul>
+<h2>How Pawsport reduces risk</h2>
+<p>We never take online card payments. You meet the puppy on video, reserve with a deposit and signed contract, and pay the balance <strong>on safe arrival</strong>. See <a href="how-china-dog-export-works.html">our full process</a>.</p>
+""",
+    },
+    {
+        "slug": "best-apartment-dogs-from-china",
+        "title": "Best Apartment-Friendly Chinese Dog Breeds (Korea & Japan)",
+        "desc": "The best small, low-shedding Chinese dog breeds for apartment living in Korea, Japan and Singapore — Chinese Crested, Shih Tzu and Pekingese compared.",
+        "eyebrow": "Breed guide",
+        "body": """
+<p>City living in Korea, Japan or Singapore calls for small, quiet, low-shedding dogs. These Chinese breeds are the best apartment companions.</p>
+<h2>Top apartment breeds</h2>
+<ul>
+<li><strong><a href="../breeds/chinese-crested.html">Chinese Crested</a></strong> — 4–5 kg, low shedding, often cabin-eligible</li>
+<li><strong><a href="../breeds/shih-tzu.html">Shih Tzu</a></strong> — gentle, sociable, 4–7 kg</li>
+<li><strong><a href="../breeds/pekingese.html">Pekingese</a></strong> — calm imperial lapdog, 3–6 kg</li>
+</ul>
+<h2>What makes a good apartment dog</h2>
+<ul>
+<li>Small size and moderate energy</li>
+<li>Low noise and low shedding</li>
+<li>Adaptable, people-focused temperament</li>
+</ul>
+<h2>Importing to your city</h2>
+<p>All three travel well by <a href="flight-nanny-vs-cargo.html">flight nanny</a>. See the <a href="import-dogs-korea.html">Korea</a> and <a href="import-dogs-japan.html">Japan</a> import guides.</p>
+""",
+    },
 ]
 
 MARKETS = [
@@ -358,6 +590,33 @@ MARKETS = [
         "lead": "Chow Chow for premium buyers, Shih Tzu for volume — social-media ready puppies with full export docs.",
         "breeds": ["chow-chow", "shih-tzu", "pekingese"],
         "guide": "how-china-dog-export-works",
+    },
+    {
+        "slug": "uae",
+        "title": "Import Chinese Dog Breeds to UAE & Saudi Arabia — Pawsport",
+        "desc": "Chow Chow, Shar-Pei and rare Chinese breeds to Dubai, Abu Dhabi and the Gulf. Live video, full export compliance, escorted delivery.",
+        "h1": "Chinese dog breeds for the UAE & Gulf",
+        "lead": "Premium statement breeds for Gulf buyers — Chow Chow and Shar-Pei lead demand, with full compliance and escorted delivery.",
+        "breeds": ["chow-chow", "shar-pei", "chongqing-dog", "chinese-crested"],
+        "guide": "import-dogs-middle-east",
+    },
+    {
+        "slug": "singapore",
+        "title": "Import Chinese Dog Breeds to Singapore — Pawsport",
+        "desc": "Small, condo-friendly Chinese breeds for Singapore — Shih Tzu, Chinese Crested and Pekingese. Full AVS licence and titer compliance handled.",
+        "h1": "Chinese dog breeds for Singapore",
+        "lead": "HDB- and condo-friendly small breeds with full AVS import compliance and escorted delivery.",
+        "breeds": ["shih-tzu", "chinese-crested", "pekingese"],
+        "guide": "import-dogs-singapore",
+    },
+    {
+        "slug": "russia",
+        "title": "Import Chinese Dog Breeds to Russia — Pawsport",
+        "desc": "Chow Chow, Shar-Pei and the rare Chongqing Dog to Russia. Cold-tolerant statement breeds with full export paperwork and escorted delivery.",
+        "h1": "Chinese dog breeds for Russia",
+        "lead": "Distinctive, cold-tolerant breeds for Russian buyers — with full export documentation and escorted delivery.",
+        "breeds": ["chow-chow", "shar-pei", "chongqing-dog"],
+        "guide": "import-dogs-russia",
     },
 ]
 
@@ -492,7 +751,8 @@ def breed_page(b: dict) -> str:
 def guide_page(g: dict) -> str:
     path = f"/guide/{g['slug']}.html"
     h1 = g["title"].split("—")[0].strip() if "—" in g["title"] else g["title"]
-    body = article_wrap(g["eyebrow"], h1, g["desc"][:160], g["body"])
+    lead = g["desc"] if len(g["desc"]) <= 160 else g["desc"][:160].rsplit(" ", 1)[0] + "…"
+    body = article_wrap(g["eyebrow"], h1, lead, g["body"])
     crumbs = breadcrumb_ld([
         ("Home", f"{SITE}/"),
         ("Guides", f"{SITE}/guide/index.html"),
@@ -542,6 +802,9 @@ def guide_index() -> str:
     breed_links = "\n".join(
         f'<li><a href="../breeds/{b["slug"]}.html">{b["name"]}</a></li>' for b in BREEDS
     )
+    market_links = "\n".join(
+        f'<li><a href="../markets/{m["slug"]}.html">{m["h1"]}</a></li>' for m in MARKETS
+    )
     body = f"""
     <article class="article-page">
       <div class="container narrow">
@@ -553,6 +816,8 @@ def guide_index() -> str:
         <ul class="guide-list">{links}</ul>
         <h2>Breed pages</h2>
         <ul class="guide-list">{breed_links}</ul>
+        <h2>By destination</h2>
+        <ul class="guide-list">{market_links}</ul>
       </div>
     </article>"""
     return shell(
